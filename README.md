@@ -109,7 +109,7 @@ Scenario: Providing anything that is not a number should crash the program
 - Clone a repository on GitHub desktop
 - Open VS code 
 - Open your file for your HTML and JavaScript code
-- Copy the code from the LMS 
+- Copy the codes from the LMS
 - Start Debugging 
 
 ## Usage
@@ -119,7 +119,7 @@ Scenario: Providing anything that is not a number should crash the program
 - When the form is submitted, the code will prevent the default form submission behavior, extract the input values, and perform the division calculation.
 - If both dividend and divider values are provided, the code will calculate the division result, round it down to the nearest whole number, and display the result in the designated result element.
 - If any errors occur during the calculation, an error message will be displayed, and the page will be stylized with a white background and black text to indicate the critical error.
-Make sure to customize the HTML elements and CSS styles as per your specific requirements.
+
 
 License
 This code is released under the MIT License, which means you are free to use, modify, and distribute it as you see fit.

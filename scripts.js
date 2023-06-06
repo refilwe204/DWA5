@@ -8,6 +8,7 @@ result.innerText = "NO calculation performed";
  * Event listener for the form submission.
  * @param {Event} event - The submit event object.
  */
+
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent the form from being submitted
 
