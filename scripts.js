@@ -1,6 +1,9 @@
 const form = document.querySelector("[data-form]"); // Select the form element
 const result = document.querySelector("[data-result]"); // Select the result element
 
+// Display "NO calculation performed" at the bottom initially
+result.innerText = "NO calculation performed";
+
 form.addEventListener("submit", (event) => { // Add a submit event listener to the form
   event.preventDefault(); // Prevent the form from being submitted
 
@@ -15,31 +18,20 @@ form.addEventListener("submit", (event) => { // Add a submit event listener to t
       const dividendNumber = parseFloat(dividend); // Convert dividend to a number
       const dividerNumber = parseFloat(divider); // Convert divider to a number
 
-      if (isNaN(dividendNumber) || isNaN(dividerNumber) || dividerNumber === 0) { // Check if the numbers are valid
-        throw new Error("Invalid number provided");
+      if (dividerNumber <3) {
+        throw new Error("Division not performed. Invalid number provided. Try again");
       }
 
       const divisionResult = dividendNumber / dividerNumber; // Perform the division
       if (!Number.isFinite(divisionResult)) { // Check if the result is a valid number
-        throw new Error("Invalid division result");
+        throw new Error("Something critical went wrong, Please reload the page");
       }
 
       const roundedResult = Math.floor(divisionResult); // Round down the result
-      result.innerText = roundedResult; // Display the result
+      result.innerText = roundedResult.toString(); // Display the result
     } catch (error) {
-      result.innerText = "Something critical went wrong. Please reload the page";
-      result.style.position = "absolute";
-      result.style.top = 0;
-      result.style.left = 0;
-      result.style.width = "100vw";
-      result.style.height = "100vh";
-      result.style.backgroundColor = "white";
-      result.style.color = "black";
-      result.style.display = "flex";
-      result.style.justifyContent = "center";
-      result.style.alignItems = "center";
+      result.innerText = error.message;
       console.error(error); // Log the error to the console
-      throw error; // Rethrow the error to propagate it further
     }
   }
 });
@@ -47,4 +39,4 @@ form.addEventListener("submit", (event) => { // Add a submit event listener to t
 
 
 
-
+     
